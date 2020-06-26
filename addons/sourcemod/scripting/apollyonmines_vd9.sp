@@ -26,7 +26,7 @@ public Plugin:myinfo = {
 	author = "apollyon094",
 	description = "Apollyon's TDM mines",
 	version = "1.0.8",
-	url = "apollyon094.blogspot.com"
+	url = "apollyon093.blogspot.com"
 
 };
 
