@@ -147,12 +147,6 @@ public Action:Command_Mine(client, args) {
 		if(IsPlayerAlive(client)) {
 			if(num_mines[client] > 0) {
 				PlaceMine(client);
-			} else {
-				if(GetConVarInt(sm_pp_tripmines) != 0) {
-					PrintCenterText(client, "You have no more mines.");
-				} else {
-					PrintCenterText(client, "Mines are disabled.");
-				}
 			}
 		}
 	}
@@ -174,11 +168,6 @@ public PlaceMine(client) {
 	TR_TraceRayFilter(trace_start, trace_end, CONTENTS_SOLID|CONTENTS_WINDOW, RayType_EndPoint, TraceFilter_All, 0);
 	if(TR_DidHit(INVALID_HANDLE)) {
 		num_mines[client]--;
-		if(num_mines[client] != 0) {
-			PrintCenterText(client, "You have %d mines left!", num_mines[client]);
-		} else {
-			PrintCenterText(client, "That was your last mine!");
-		}
 		TR_GetEndPosition(trace_end, INVALID_HANDLE);
 		TR_GetPlaneNormal(INVALID_HANDLE, trace_normal);
 		SetupMine(client, trace_end, trace_normal);
