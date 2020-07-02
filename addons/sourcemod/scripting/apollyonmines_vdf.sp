@@ -9,10 +9,11 @@
 #define MODEL_MINE "models/props_lab/tpplug.mdl" 
 #define MODEL_BEAM "materials/sprites/purplelaser1.vmt"
 #define LASER_WIDTH 0.6//0.12
-#define LASER_COLOR_CMB "255 0 0"
-#define LASER_COLOR_REB "0 0 255"
+#define LASER_COLOR_CMB "255 0 0" ///combine team color
+#define LASER_COLOR_REB "0 0 255" ///rebel team color
+#define LASER_COLOR_DET "255 127 0" ///deathmatch team color
 #define TRACE_START 1.0
-#define TRACE_LENGTH 80.0
+#define TRACE_LENGTH 32769.0 ///map size limit
 #define COMMAND "mine"
 #define ALTCOMMAND "tripmine"
 
@@ -20,7 +21,7 @@ public Plugin:myinfo = {
 	name = "apollyonmines",
 	author = "apollyon094",
 	description = "Apollyon's TDM mines",
-	version = "1.1.1",
+	version = "1.1.4",
 	url = "apollyon093.blogspot.com"
 };
 
@@ -38,7 +39,7 @@ new last_mine_used;
 new minefilter;
 
 public OnPluginStart() {
-	sm_pp_tripmines = CreateConVar("sm_pp_tripmines", "1", sm_pp_tripmines_desc, 0);
+	sm_pp_tripmines = CreateConVar("sm_pp_tripmines", "4", sm_pp_tripmines_desc, 0);
 	sm_pp_minedmg = CreateConVar("sm_pp_minedmg", "128", "damage (magnitude) of the tripmines", 0);
 	sm_pp_minerad = CreateConVar("sm_pp_minerad", "0", "override for explosion damage radius", 0);
 	sm_pp_minefilter = CreateConVar("sm_pp_minefilter", "2", "0 = detonate when laser touches anyone, 1 = enemies and owner only, 2 = enemies only", 0);
@@ -58,7 +59,6 @@ public OnMapStart() {
 	PrecacheSound(SOUND_ARMED, true);
 	PrecacheModel(MODEL_MINE, true);
 	PrecacheModel(MODEL_BEAM, true);
-	CreateTimer(60.0, ActionGAMP, _, TIMER_REPEAT);
 }
 
 bool:IsValidClient(client) {
@@ -115,13 +115,6 @@ public DeletePlacedMines(client) {
 }
 
 public GiveAllPlayersMines() {
-	new mines = GetConVarInt(sm_pp_tripmines);
-	for(new i = 0; i < MAXPLAYERS+1; i++) {
-		num_mines[i] = mines;
-	}
-}
-
-public Action ActionGAMP(Handle timer) {
 	new mines = GetConVarInt(sm_pp_tripmines);
 	for(new i = 0; i < MAXPLAYERS+1; i++) {
 		num_mines[i] = mines;
@@ -308,6 +301,8 @@ public CreateLaser(Float:start[3], Float:end[3], String:name[], team) {
 		} else {
 			if(team == 3) {
 				color = LASER_COLOR_CMB;
+			} else {
+				color = LASER_COLOR_DET;
 			}
 		}
 		TeleportEntity(ent, start, NULL_VECTOR, NULL_VECTOR);
