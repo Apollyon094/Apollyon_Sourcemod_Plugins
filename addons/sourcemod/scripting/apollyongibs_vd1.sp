@@ -1,4 +1,5 @@
 ///So far I haven't modded much
+///NOTE: Add flesh gibs like ʂčøяƥ did with his version on Pirate's Cove
 
 #include <sourcemod>
 #include <sdktools>
