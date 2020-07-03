@@ -22,8 +22,8 @@ static String: GibName[numGibs][60] = {
     "models/gibs/hgibs_rib.mdl",
     "models/gibs/hgibs_scapula.mdl",
     "models/gibs/hgibs_spine.mdl",
+    "models/gibs/antlion_gib_medium_1.mdl",
     "models/gibs/antlion_gib_small_1.mdl",
-    "models/gibs/antlion_gib_small_2.mdl",
     "models/gibs/antlion_gib_small_3.mdl",
 };
 
