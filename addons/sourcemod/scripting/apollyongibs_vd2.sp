@@ -1,5 +1,6 @@
 ///So far I haven't modded much
-///NOTE: Add flesh gibs like ʂčøяƥ did with his version on Pirate's Cove
+///TODO: Add flesh gibs like ʂčøяƥ did with his version on Pirates' Cove. Done.
+///TODO: Color and add larger antlion gibs red. May need to eek help from foo or ʂčøяƥ for this/
 
 #include <sourcemod>
 #include <sdktools>
@@ -14,15 +15,19 @@ public Plugin: myinfo = {
     url = "apollyon093.blogspot.com"
 };
 
-const numGibs = 4;
+const numGibs = 7;
 
 static String: GibName[numGibs][60] = {
     "models/gibs/hgibs.mdl",
     "models/gibs/hgibs_rib.mdl",
     "models/gibs/hgibs_scapula.mdl",
-    "models/gibs/hgibs_spine.mdl"
+    "models/gibs/hgibs_spine.mdl",
+    "models/gibs/antlion_gib_small_1.mdl",
+    "models/gibs/antlion_gib_small_2.mdl",
+    "models/gibs/antlion_gib_small_3.mdl",
 };
 
+///I have no idea where the flesh giblets are, I assume he used these models. Hopefully noone will notice they're from antlions, whatev.
 new moff;
 
 public OnPluginStart() {
