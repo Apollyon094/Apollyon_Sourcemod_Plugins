@@ -6,8 +6,8 @@
 
 ///So far I haven't modded much
 ///TODO: Add flesh gibs like ʂčøяƥ did with his version on Pirates' Cove. Done.
-///TODO: Color and add larger antlion gibs red. May need to eek help from foo or ʂčøяƥ for this/
-
+///TODO: Color and add larger antlion gibs red. May need to seek help from foo or ʂčøяƥ for this/
+///EDIT: Removed from my server since my PC can't handle it. May add back once I build by physical server dedicated to this stuff.
 #include <sourcemod>
 #include <sdktools>
 
