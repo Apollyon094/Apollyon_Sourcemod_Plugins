@@ -1,5 +1,5 @@
+///OG plugin by Neidermeyer. No copyright.
 #include <sourcemod>
-
 #include <sdktools>
 
 public Plugin myinfo = {
