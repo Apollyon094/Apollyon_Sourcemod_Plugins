@@ -1,3 +1,9 @@
+/* hlgore.sp:  HL2MP Goremod v6.0.0 by [foo] bar 
+ * This mod is based on CS:S Goremod v5.3.2 by Joe 'DiscoBBQ' Maley:
+ * 
+ * This mod deprecates the rn-gibs mod by [foo] bar.
+ */
+
 ///So far I haven't modded much
 ///TODO: Add flesh gibs like ʂčøяƥ did with his version on Pirates' Cove. Done.
 ///TODO: Color and add larger antlion gibs red. May need to eek help from foo or ʂčøяƥ for this/
