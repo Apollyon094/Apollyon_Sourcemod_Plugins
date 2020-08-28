@@ -1,3 +1,4 @@
+///OG plugin by reflex-gamers.com. Uncopyrighted.
 #include <sourcemod>
 #include <sdktools>
 
